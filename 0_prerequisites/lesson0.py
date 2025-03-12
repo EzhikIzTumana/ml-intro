@@ -50,5 +50,42 @@ def who_likes_it(people):
     else:
         return(f"{people[0]}, {people[1]} and {l - 2} others like this")
 
-print(who_likes_it(["Jacob", "Alex"] ))
+# def snail(array):
+#     lst = []
+#     i, j, dim  = 0, 0, 0
+#     n = len(array)
+#     while i < n - dim:
+#         while j < n - dim:
+#             #lst.append(array[i][j])
+#             j+=1
+#         i += 1
+#     print(lst)
+
+def validate_pin(pin):
+    if len(pin) == (4 or 6) and pin.isdigit():
+        return True
+    else:
+        return False
+
+
+def disemvowel_trolls(text):
+    vowels = "euioaEUIOA"
+    for char in vowels:
+        text = text.replace(char, '')
+    return(text)
+
+def convert_to_camel_case(text):
+    delimiters = '-_'
+    flag = text.istitle()
+    for char in delimiters:
+        text = text.replace(char, ' ')
+    text = text.title()
+    text = text.replace(' ', '')
+    if flag == False:
+        text = text[0].lower() + text[1:]
+    return text
+
+#print(validate_pin("1234"))
+print(convert_to_camel_case('The_Stealth-Warrior'))        
+#snail([[1,2,3], [4,5,6], [7,8,9]])
 
